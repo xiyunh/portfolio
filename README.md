@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+A dark, minimal portfolio site with a numbered project showcase. Built with Next.js (App Router), Tailwind CSS v4, and Motion.
 
-First, run the development server:
+## Run it
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Make it yours
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Everything on the site is driven by one file: [`lib/data.ts`](lib/data.ts).**
 
-## Learn More
+- `site` — your name, role, tagline, location, email, and social links
+- `about` — bio paragraphs and skill tags
+- `projects` — the project showcase. Each entry has a title, tags, description,
+  year, tech list, and optional `live` / `source` links. Set `featured: true`
+  to show it on the home page; every entry appears on `/projects`.
+- `experience` — work history for the timeline section
 
-To learn more about Next.js, take a look at the following resources:
+### Project preview images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each project card shows a generated gradient panel by default (colors come from
+the `gradient` field). To use a real screenshot instead, drop an image into
+`public/` and set `image: "/my-screenshot.png"` on the project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure
 
-## Deploy on Vercel
+- `app/page.tsx` — home: hero, about, selected projects, experience, contact
+- `app/projects/page.tsx` — full numbered project archive (01–NN)
+- `components/ProjectCard.tsx` — the numbered project card
+- `app/globals.css` — theme tokens (change `--accent` to re-color the site)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub and import into [Vercel](https://vercel.com/new) — zero config needed.
