@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { projects } from "@/lib/data";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectsInfinite from "@/components/ProjectsInfinite";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -22,18 +22,14 @@ export default function ProjectsPage() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
             The full archive — experiments, client work, and side projects,
-            newest first.
+            newest first. Keep scrolling; it never ends.
           </p>
           <div className="mt-10 h-px w-full bg-line" />
         </div>
       </Reveal>
 
       <div>
-        {projects.map((p, i) => (
-          <Reveal key={p.slug}>
-            <ProjectCard project={p} index={i} />
-          </Reveal>
-        ))}
+        <ProjectsInfinite />
       </div>
     </div>
   );
