@@ -8,7 +8,6 @@ import { site } from "@/lib/data";
 const links = [
   { href: "/#about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/#experience", label: "Experience" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -27,7 +26,7 @@ export default function Nav() {
           href="/"
           className="font-mono text-sm tracking-widest text-foreground"
         >
-          <span className="text-accent">●</span> {site.name.toUpperCase()}
+          {site.name.toUpperCase()}
         </Link>
 
         {/* desktop */}

@@ -13,7 +13,7 @@ export default function About() {
               <p key={i}>{p}</p>
             ))}
             <p className="label pt-4">
-              <span className="text-accent">◆</span> Based in {site.location}
+              Based in {site.location}
             </p>
           </div>
         </Reveal>

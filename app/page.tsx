@@ -1,16 +1,16 @@
 import Hero from "@/components/Hero";
+import Ticker from "@/components/Ticker";
 import About from "@/components/About";
-import FeaturedProjects from "@/components/FeaturedProjects";
-import Experience from "@/components/Experience";
+import ProjectsMarquee from "@/components/ProjectsMarquee";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Ticker />
       <About />
-      <FeaturedProjects />
-      <Experience />
+      <ProjectsMarquee />
       <Contact />
     </>
   );

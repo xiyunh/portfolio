@@ -35,7 +35,7 @@ function Preview({ project }: { project: Project }) {
         {project.slug.replace(/-/g, "_")}.sys
       </span>
       <span className="absolute right-4 bottom-4 font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
-        ● preview_ready
+        [ preview_ready ]
       </span>
     </div>
   );

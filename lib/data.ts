@@ -7,7 +7,6 @@
 export const site = {
   name: "Xiyun Hu",
   firstName: "Xiyun",
-  role: "Software Engineer",
   tagline:
     "I design and build fast, reliable software — from polished interfaces to the systems behind them.",
   location: "San Francisco, CA",
@@ -132,48 +131,5 @@ export const projects: Project[] = [
     live: "https://example.com",
     source: "https://github.com/yourhandle/hexforge",
     gradient: ["#fca5a5", "#450a0a"],
-  },
-];
-
-export type Experience = {
-  company: string;
-  role: string;
-  period: string;
-  summary: string;
-  highlights: string[];
-};
-
-export const experience: Experience[] = [
-  {
-    company: "Acme Systems",
-    role: "Senior Software Engineer",
-    period: "2024 — Present",
-    summary:
-      "Leading development of the core data platform used by 200+ enterprise customers.",
-    highlights: [
-      "Cut p95 query latency 8× by redesigning the aggregation layer",
-      "Led migration of 30 services to a typed event bus with zero downtime",
-    ],
-  },
-  {
-    company: "Nimbus Labs",
-    role: "Software Engineer",
-    period: "2022 — 2024",
-    summary:
-      "Full-stack engineer on a collaborative SaaS product from seed through Series B.",
-    highlights: [
-      "Built the real-time collaboration engine (CRDTs over WebSockets)",
-      "Shipped the public API and grew it to 5M requests/day",
-    ],
-  },
-  {
-    company: "Freelance",
-    role: "Independent Developer",
-    period: "2020 — 2022",
-    summary:
-      "Designed and delivered web products for startups and small businesses.",
-    highlights: [
-      "Delivered 12 client projects end-to-end, from brief to deployment",
-    ],
   },
 ];

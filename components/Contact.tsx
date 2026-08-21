@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 md:py-32">
-      <SectionHeading index="04" label="Contact" title="Let's build something" />
+      <SectionHeading index="03" label="Contact" title="Let's build something" />
       <Reveal>
         <div className="max-w-2xl">
           <p className="text-lg leading-relaxed text-muted">

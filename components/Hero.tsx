@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { site } from "@/lib/data";
+import LocalTime from "./LocalTime";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -19,22 +20,20 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-16">
         <motion.p {...fade(0.05)} className="label mb-6">
-          <span className="text-accent">◆</span> {site.availability}
+          {site.availability}
         </motion.p>
 
         <motion.h1
           {...fade(0.15)}
-          className="max-w-4xl text-5xl leading-[1.05] font-semibold tracking-tight md:text-7xl"
+          className="max-w-4xl text-6xl leading-[0.95] font-semibold tracking-tight md:text-[7.5rem]"
         >
           {site.name}
-          <span className="text-accent">.</span>
-          <br />
-          <span className="text-muted">{site.role}</span>
+          <span className="cursor-blink h-[0.85em] translate-y-[0.08em]" />
         </motion.h1>
 
         <motion.p
           {...fade(0.28)}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-muted"
+          className="mt-10 max-w-xl text-lg leading-relaxed text-muted"
         >
           {site.tagline}
         </motion.p>
@@ -57,9 +56,8 @@ export default function Hero() {
 
         <motion.div
           {...fade(0.55)}
-          className="mt-20 flex items-center gap-6 font-mono text-xs tracking-widest text-muted"
+          className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs tracking-widest text-muted"
         >
-          <span className="hidden text-line md:inline">──────</span>
           {site.socials.map((s) => (
             <a
               key={s.label}
@@ -71,6 +69,9 @@ export default function Hero() {
               {s.label}
             </a>
           ))}
+          <span className="ml-auto hidden uppercase md:inline">
+            {site.location} / <LocalTime />
+          </span>
         </motion.div>
       </div>
 
