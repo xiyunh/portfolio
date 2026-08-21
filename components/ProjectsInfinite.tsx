@@ -1,58 +1,57 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { projects } from "@/lib/data";
 import ProjectCard from "./ProjectCard";
 import Reveal from "./Reveal";
 
-// hard cap so the DOM can't grow unbounded
-const MAX_CYCLES = 40;
-
+// Seamless looping scroll: the list is rendered twice, and the instant the
+// viewport crosses into the second copy the scroll position is teleported
+// back by one copy's height. Identical pixels land in the viewport, so the
+// jump is invisible — the page length never changes and there's no counter.
 export default function ProjectsInfinite() {
-  const [cycles, setCycles] = useState(1);
-  const sentinelRef = useRef<HTMLDivElement>(null);
+  const firstRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setCycles((c) => Math.min(c + 1, MAX_CYCLES));
+    const first = firstRef.current;
+    if (!first) return;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = first.getBoundingClientRect();
+        const top = rect.top + window.scrollY; // copy A start, in doc coords
+        const L = rect.height;
+        if (L > 0 && window.scrollY >= top + L) {
+          window.scrollTo({ top: window.scrollY - L, behavior: "instant" });
         }
-      },
-      // start appending well before the user reaches the end
-      { rootMargin: "1200px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      {Array.from({ length: cycles }, (_, cycle) => (
-        <div key={cycle}>
-          {cycle > 0 && (
-            <div
-              aria-hidden
-              className="flex items-center gap-4 py-14 font-mono text-[10px] tracking-[0.3em] text-muted/60 uppercase select-none"
-            >
-              <span className="h-px flex-1 bg-line" />
-              <span className="spin-slow text-accent-2">✳</span>
-              loop_{String(cycle + 1).padStart(2, "0")} / the archive repeats
-              <span className="spin-slow text-accent">✳</span>
-              <span className="h-px flex-1 bg-line" />
-            </div>
-          )}
-          {projects.map((p, i) => (
-            <Reveal key={`${cycle}-${p.slug}`}>
-              <ProjectCard project={p} index={i} />
-            </Reveal>
-          ))}
-        </div>
-      ))}
-      {/* sentinel that triggers the next cycle */}
-      <div ref={sentinelRef} className="h-px" />
+      <div ref={firstRef}>
+        {projects.map((p, i) => (
+          <Reveal key={`a-${p.slug}`}>
+            <ProjectCard project={p} index={i} />
+          </Reveal>
+        ))}
+      </div>
+      {/* second copy — the wrap happens before its midpoint is ever passed */}
+      <div>
+        {projects.map((p, i) => (
+          <Reveal key={`b-${p.slug}`}>
+            <ProjectCard project={p} index={i} />
+          </Reveal>
+        ))}
+      </div>
     </>
   );
 }
