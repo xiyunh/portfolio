@@ -70,7 +70,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "ClickHouse", "Redis", "WebSockets"],
     live: "https://example.com",
     source: "https://github.com/yourhandle/pulseboard",
-    gradient: ["#c9f24b", "#0e3b2e"],
+    gradient: ["#f06bb3", "#2b0a1d"],
     featured: true,
   },
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     year: "2025",
     tech: ["Go", "PostgreSQL", "PostGIS", "Kubernetes", "gRPC"],
     source: "https://github.com/yourhandle/atlas-api",
-    gradient: ["#7dd3fc", "#1e1b4b"],
+    gradient: ["#6b9fff", "#0a1233"],
     featured: true,
   },
   {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     year: "2025",
     tech: ["React", "Yjs", "Electron", "SQLite", "Tailwind"],
     live: "https://example.com",
-    gradient: ["#f0abfc", "#3b0764"],
+    gradient: ["#c084fc", "#22093a"],
     featured: true,
   },
   {
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     year: "2024",
     tech: ["Python", "FastAPI", "scikit-learn", "Grafana", "Airflow"],
     source: "https://github.com/yourhandle/sentinel-ml",
-    gradient: ["#fdba74", "#431407"],
+    gradient: ["#f9a8d4", "#320f22"],
     featured: true,
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     year: "2024",
     tech: ["React Native", "MapLibre", "SQLite", "TypeScript"],
     live: "https://example.com",
-    gradient: ["#86efac", "#052e16"],
+    gradient: ["#8fc0ff", "#0a1a2e"],
   },
   {
     slug: "hexforge",
@@ -130,6 +130,6 @@ export const projects: Project[] = [
     tech: ["WebGL", "Three.js", "GLSL", "Svelte"],
     live: "https://example.com",
     source: "https://github.com/yourhandle/hexforge",
-    gradient: ["#fca5a5", "#450a0a"],
+    gradient: ["#fb7185", "#2e0a14"],
   },
 ];

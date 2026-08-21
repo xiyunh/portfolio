@@ -18,8 +18,13 @@ export default function Hero() {
       {/* radial fade so the grid dissolves toward edges */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_78%)]" />
 
+      {/* ambient color blobs */}
+      <div className="pointer-events-none absolute -top-32 right-[-10%] h-[480px] w-[480px] rounded-full bg-accent opacity-[0.09] blur-[140px]" />
+      <div className="pointer-events-none absolute bottom-[-15%] left-[-8%] h-[420px] w-[420px] rounded-full bg-accent-2 opacity-[0.08] blur-[140px]" />
+
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-16">
         <motion.p {...fade(0.05)} className="label mb-6">
+          <span className="spin-slow mr-2 text-accent">✳</span>
           {site.availability}
         </motion.p>
 
@@ -28,7 +33,6 @@ export default function Hero() {
           className="max-w-4xl text-6xl leading-[0.95] font-semibold tracking-tight md:text-[7.5rem]"
         >
           {site.name}
-          <span className="cursor-blink h-[0.85em] translate-y-[0.08em]" />
         </motion.h1>
 
         <motion.p
@@ -41,7 +45,7 @@ export default function Hero() {
         <motion.div {...fade(0.4)} className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-3 bg-accent px-6 py-3 font-mono text-xs tracking-[0.18em] text-background uppercase transition-transform hover:-translate-y-0.5"
+            className="btn-pop group inline-flex items-center gap-3 bg-accent px-6 py-3 font-mono text-xs tracking-[0.18em] text-background uppercase"
           >
             View projects
             <span className="transition-transform group-hover:translate-x-1">→</span>

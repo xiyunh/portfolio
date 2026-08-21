@@ -13,7 +13,7 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className="group mr-6 block w-[300px] shrink-0 border border-line bg-surface transition-colors duration-300 hover:border-accent/60 md:w-[400px]"
+      className="card-pop group mr-6 block w-[300px] shrink-0 border border-line bg-surface hover:border-accent/60 md:w-[400px]"
     >
       {/* preview panel */}
       <div

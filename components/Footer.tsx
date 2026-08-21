@@ -16,7 +16,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {site.name}
         </p>
-        <p>Built with Next.js / designed in the dark</p>
+        <p>Built with Next.js / fueled by <span className="text-accent">♥</span> and coffee</p>
       </div>
     </footer>
   );

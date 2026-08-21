@@ -15,9 +15,11 @@ export default function Contact() {
           </p>
           <a
             href={`mailto:${site.email}`}
-            className="group mt-10 inline-flex items-center gap-4 text-2xl font-semibold tracking-tight transition-colors hover:text-accent md:text-4xl"
+            className="group mt-10 inline-flex items-center gap-4 text-2xl font-semibold tracking-tight md:text-4xl"
           >
-            {site.email}
+            <span className="transition-colors group-hover:text-transparent group-hover:[background:linear-gradient(100deg,var(--accent),var(--accent-2))] group-hover:bg-clip-text">
+              {site.email}
+            </span>
             <span className="text-accent transition-transform group-hover:translate-x-2">→</span>
           </a>
           <div className="mt-12 flex gap-8 font-mono text-xs tracking-[0.18em] uppercase">
