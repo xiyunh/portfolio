@@ -87,7 +87,8 @@ export type Project = {
   title: string;
   tags: string[];
   description: string;
-  year: string;
+  // optional — the year label is hidden when omitted
+  year?: string;
   tech: string[];
   // optional links — omit either one and its button disappears
   live?: string;
@@ -102,75 +103,109 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "pulseboard",
-    title: "Pulseboard",
-    tags: ["Full-stack", "Real-time"],
+    slug: "star-compass",
+    title: "Star Compass",
+    tags: ["Embedded", "Hardware"],
     description:
-      "Real-time analytics dashboard streaming a million events a minute over WebSockets, with sub-second aggregation and anomaly alerts.",
-    year: "2026",
-    tech: ["Next.js", "TypeScript", "ClickHouse", "Redis", "WebSockets"],
-    live: "https://example.com",
-    source: "https://github.com/yourhandle/pulseboard",
-    gradient: ["#f06bb3", "#2b0a1d"],
-    featured: true,
-  },
-  {
-    slug: "atlas-api",
-    title: "Atlas API",
-    tags: ["Backend", "Infrastructure"],
-    description:
-      "A geo-search API serving 40M+ places with typo-tolerant autocomplete at p99 < 50ms, deployed across three regions.",
-    year: "2025",
-    tech: ["Go", "PostgreSQL", "PostGIS", "Kubernetes", "gRPC"],
-    source: "https://github.com/yourhandle/atlas-api",
+      "A compass that orients itself by the stars rather than magnetic north — embedded sensing, a star-catalog lookup, and a custom-built housing.",
+    tech: ["Arduino", "C/C++", "Fusion 360"],
+    source: "https://github.com/xiyunh/starcompass",
     gradient: ["#6b9fff", "#0a1233"],
     featured: true,
   },
   {
-    slug: "inkwell",
-    title: "Inkwell",
-    tags: ["Product", "Design & Development"],
+    slug: "orchestra",
+    title: "Musical Robotic Orchestra",
+    tags: ["Robotics", "Mechatronics"],
     description:
-      "A distraction-free collaborative writing app with CRDT-based sync, offline mode, and a plugin system for custom export formats.",
-    year: "2025",
-    tech: ["React", "Yjs", "Electron", "SQLite", "Tailwind"],
-    live: "https://example.com",
+      "A set of robotic instruments that perform together in sync — actuators, timing control, and a conductor program that turns a score into motion.",
+    tech: ["Arduino", "Raspberry Pi", "SolidWorks"],
+    gradient: ["#f06bb3", "#2b0a1d"],
+    featured: true,
+  },
+  {
+    slug: "drone",
+    title: "Autonomous Drone",
+    tags: ["Robotics", "Autonomy"],
+    description:
+      "A drone that flies itself — flight-controller integration, onboard sensing, and autonomous navigation routines.",
+    tech: ["Raspberry Pi", "Python", "KiCad"],
     gradient: ["#c084fc", "#22093a"],
     featured: true,
   },
   {
-    slug: "sentinel-ml",
-    title: "Sentinel ML",
-    tags: ["Machine Learning", "Tooling"],
+    slug: "recognition",
+    title: "ML Song & Writing Recognition",
+    tags: ["Machine Learning", "Python"],
     description:
-      "Model-monitoring toolkit that detects data drift and silent accuracy decay in production ML pipelines before users notice.",
-    year: "2024",
-    tech: ["Python", "FastAPI", "scikit-learn", "Grafana", "Airflow"],
-    source: "https://github.com/yourhandle/sentinel-ml",
+      "Machine-learning models that identify songs from audio clips and recognize handwriting from images.",
+    tech: ["Python", "Machine Learning"],
+    gradient: ["#8fc0ff", "#0a1a2e"],
+    featured: true,
+  },
+  {
+    slug: "rocket-engine",
+    title: "Rocket Engine",
+    tags: ["Aerospace", "CAD"],
+    description:
+      "A rocket engine designed and built as part of a student rocket project — CAD modelling, analysis, and manufacturing.",
+    tech: ["SolidWorks", "MATLAB"],
+    gradient: ["#fb7185", "#2e0a14"],
+    featured: true,
+  },
+  {
+    slug: "roblox",
+    title: "Roblox Game",
+    tags: ["Game Dev", "Blender"],
+    description:
+      "A Roblox game with every asset — environment, props, characters — modelled in Blender, plus scripted gameplay.",
+    tech: ["Blender", "Roblox Studio", "Lua"],
     gradient: ["#f9a8d4", "#320f22"],
     featured: true,
   },
   {
-    slug: "waypoint",
-    title: "Waypoint",
-    tags: ["Mobile", "Maps"],
+    slug: "trading-bot",
+    title: "Trading Bot",
+    tags: ["Python", "Finance"],
     description:
-      "Offline-first hiking companion with vector maps, GPX route planning, and elevation profiles — built for zero-signal trails.",
-    year: "2024",
-    tech: ["React Native", "MapLibre", "SQLite", "TypeScript"],
-    live: "https://example.com",
+      "An automated trading bot that pulls market data, evaluates a strategy, and places orders without human input.",
+    tech: ["Python"],
+    gradient: ["#6b9fff", "#0a1233"],
+  },
+  {
+    slug: "skincare",
+    title: "Skincare Store",
+    tags: ["Web", "E-commerce"],
+    description:
+      "A storefront for a skincare brand — product catalog, cart, and checkout with a clean, mobile-first design.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    gradient: ["#f06bb3", "#2b0a1d"],
+  },
+  {
+    slug: "satellite",
+    title: "Satellite Material Research",
+    tags: ["Research", "Materials"],
+    description:
+      "A research paper on materials for satellite applications — testing, analysis, and findings written up for publication.",
+    tech: ["MATLAB", "LaTeX"],
+    gradient: ["#c084fc", "#22093a"],
+  },
+  {
+    slug: "light-shield",
+    title: "Light Shield",
+    tags: ["CAD", "Fabrication"],
+    description:
+      "A light shield taken from concept to fabricated part — designed in CAD, prototyped, and tested against stray light.",
+    tech: ["Fusion 360"],
     gradient: ["#8fc0ff", "#0a1a2e"],
   },
   {
-    slug: "hexforge",
-    title: "Hexforge",
-    tags: ["Creative Coding", "WebGL"],
+    slug: "3d-portfolio",
+    title: "3D Art Portfolio",
+    tags: ["Web", "3D"],
     description:
-      "A browser-based generative art studio — GPU-accelerated shader playground with a node editor and one-click print exports.",
-    year: "2023",
-    tech: ["WebGL", "Three.js", "GLSL", "Svelte"],
-    live: "https://example.com",
-    source: "https://github.com/yourhandle/hexforge",
-    gradient: ["#fb7185", "#2e0a14"],
+      "A website showcasing 3D artwork rendered in Blender, presented in an interactive gallery.",
+    tech: ["Blender", "Three.js", "Next.js"],
+    gradient: ["#f9a8d4", "#320f22"],
   },
 ];

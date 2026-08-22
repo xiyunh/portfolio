@@ -33,9 +33,11 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
         <span className="absolute top-3 left-3 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
-          {project.year}
-        </span>
+        {project.year && (
+          <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
+            {project.year}
+          </span>
+        )}
       </div>
 
       {/* meta */}
@@ -59,7 +61,9 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
 
 export default function ProjectsMarquee() {
   // track is doubled for a seamless -50% loop
-  const loop = [...projects, ...projects];
+  const featured = projects.filter((p) => p.featured);
+  const shown = featured.length ? featured : projects;
+  const loop = [...shown, ...shown];
 
   return (
     <section id="projects" className="scroll-mt-24 py-24 md:py-32">
@@ -77,7 +81,7 @@ export default function ProjectsMarquee() {
               <MarqueeCard
                 key={`${p.slug}-${i}`}
                 project={p}
-                index={i % projects.length}
+                index={i % shown.length}
               />
             ))}
           </div>

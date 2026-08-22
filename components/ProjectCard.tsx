@@ -60,7 +60,7 @@ export default function ProjectCard({
             <span className="index-outline font-mono text-6xl font-bold md:text-8xl">
               {number}
             </span>
-            <span className="label">{project.year}</span>
+            {project.year && <span className="label">{project.year}</span>}
           </div>
 
           <h3 className="mt-6 text-2xl font-semibold tracking-tight md:text-4xl">
