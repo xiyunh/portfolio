@@ -98,6 +98,8 @@ export type Project = {
   // optional screenshot placed in /public — falls back to a generated
   // preview panel when omitted
   image?: string;
+  // extra photos shown beneath the preview on the archive page
+  gallery?: string[];
   // two hex colors used by the generated preview panel
   gradient: [string, string];
 };
@@ -133,8 +135,10 @@ export const projects: Project[] = [
     title: "Autonomous Drone",
     tags: ["Robotics", "Autonomy"],
     description:
-      "A drone that flies itself — flight-controller integration, onboard sensing, and autonomous navigation routines.",
-    tech: ["Raspberry Pi", "Python", "KiCad"],
+      "A custom quadcopter built to find an object, fly to it, and pick it up on its own — a 3D-printed frame designed in Fusion 360 around a Pixhawk flight controller, with a camera and a servo-driven grabber positioned in its field of view.",
+    image: "/projects/drone.jpg",
+    gallery: ["/projects/drone-cad.jpg"],
+    tech: ["Pixhawk", "Fusion 360", "3D Printing", "FlySky RC", "Brushless Motors & ESCs"],
     gradient: ["#c084fc", "#22093a"],
   },
   {

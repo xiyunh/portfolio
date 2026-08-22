@@ -131,16 +131,36 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* right: preview */}
-        <a
-          href={href}
-          target={href ? "_blank" : undefined}
-          rel="noreferrer"
-          className="card-glow relative block aspect-[16/10] overflow-hidden"
-          aria-label={`${project.title} preview`}
-        >
-          <Preview project={project} />
-        </a>
+        {/* right: preview + optional gallery */}
+        <div>
+          <a
+            href={href}
+            target={href ? "_blank" : undefined}
+            rel="noreferrer"
+            className="card-glow relative block aspect-[16/10] overflow-hidden"
+            aria-label={`${project.title} preview`}
+          >
+            <Preview project={project} />
+          </a>
+          {project.gallery && project.gallery.length > 0 && (
+            <div
+              className={`mt-4 grid gap-4 ${project.gallery.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+            >
+              {project.gallery.map((src, i) => (
+                <div
+                  key={src}
+                  className="card-glow group relative aspect-[16/10] overflow-hidden"
+                >
+                  <CoverImage
+                    src={src}
+                    alt={`${project.title} — image ${i + 2}`}
+                    sizes="(min-width: 768px) 60vw, 100vw"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );
