@@ -21,8 +21,8 @@ export default function ProjectsPage() {
             All projects<span className="text-accent">.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            The full archive — experiments, client work, and side projects,
-            newest first. Keep scrolling; it never ends.
+            The full archive — hardware, software, research, and 3D work.
+            Keep scrolling; it never ends.
           </p>
           <div className="mt-10 h-px w-full bg-line" />
         </div>
