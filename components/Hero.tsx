@@ -24,7 +24,6 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-16">
         <motion.p {...fade(0.05)} className="label mb-6">
-          <span className="spin-slow mr-2 text-accent">✳</span>
           {site.availability}
         </motion.p>
 

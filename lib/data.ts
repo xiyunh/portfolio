@@ -9,13 +9,12 @@ export const site = {
   firstName: "Xiyun",
   tagline:
     "I design and build fast, reliable software — from polished interfaces to the systems behind them.",
-  location: "San Francisco, CA",
-  email: "xiyunhuuu@gmail.com",
+  location: "Los Angeles, CA",
+  email: "xiyunhu@ucla.edu",
   availability: "Open to new opportunities",
   socials: [
     { label: "GitHub", href: "https://github.com/yourhandle" },
     { label: "LinkedIn", href: "https://linkedin.com/in/yourhandle" },
-    { label: "X / Twitter", href: "https://x.com/yourhandle" },
   ],
 };
 

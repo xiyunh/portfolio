@@ -111,16 +111,6 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
 
-/* outlined display text (footer wordmark) */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px rgb(255 255 255 / 0.1);
-  transition: -webkit-text-stroke-color 0.4s ease;
-}
-.text-outline:hover {
-  -webkit-text-stroke-color: color-mix(in srgb, var(--accent) 55%, transparent);
-}
-
 /* infinite marquee */
 .marquee {
   overflow: hidden;
@@ -160,15 +150,6 @@ body::after {
 
 /* ── charm pass ─────────────────────────────────── */
 
-/* slow-spinning asterisk ornament */
-.spin-slow {
-  display: inline-block;
-  animation: spin-slow 9s linear infinite;
-}
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-
 /* offset "pop" shadow — buttons */
 .btn-pop {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -178,13 +159,16 @@ body::after {
   box-shadow: 5px 5px 0 var(--accent-2);
 }
 
-/* offset "pop" shadow — marquee cards */
-.card-pop {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+/* glowing outline — project cards */
+.card-glow {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.card-pop:hover {
-  transform: translate(-3px, -3px) rotate(-0.4deg);
-  box-shadow: 7px 7px 0 color-mix(in srgb, var(--accent-2) 65%, transparent);
+.card-glow:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 0 28px color-mix(in srgb, var(--accent) 45%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 /* pink→blue gradient text */
@@ -195,8 +179,3 @@ body::after {
   color: transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .spin-slow {
-    animation: none;
-  }
-}
