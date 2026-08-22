@@ -49,7 +49,7 @@ export default function ProjectCard({
   index: number;
 }) {
   const number = String(index + 1).padStart(2, "0");
-  const href = project.live ?? project.source;
+  const href = project.live ?? project.source ?? project.links?.[0]?.href;
 
   return (
     <article className="group border-b border-line py-14 first:pt-0 md:py-20">
@@ -100,7 +100,7 @@ export default function ProjectCard({
             {project.tech.join(" · ")}
           </p>
 
-          <div className="mt-8 flex gap-6 font-mono text-xs tracking-[0.18em] uppercase">
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs tracking-[0.18em] uppercase">
             {project.live && (
               <a
                 href={project.live}
@@ -121,6 +121,17 @@ export default function ProjectCard({
                 Source ↗
               </a>
             )}
+            {project.links?.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noreferrer"
+                className="link-sweep text-accent"
+              >
+                {l.label} ↗
+              </a>
+            ))}
           </div>
         </div>
 

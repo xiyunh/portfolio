@@ -93,6 +93,8 @@ export type Project = {
   // optional links — omit either one and its button disappears
   live?: string;
   source?: string;
+  // extra labelled links (videos, papers, writeups) — rendered after live/source
+  links?: { label: string; href: string }[];
   // optional screenshot placed in /public — falls back to a generated
   // preview panel when omitted
   image?: string;
@@ -116,8 +118,13 @@ export const projects: Project[] = [
     title: "Musical Robotic Orchestra",
     tags: ["Robotics", "Mechatronics"],
     description:
-      "A set of robotic instruments that perform together in sync — actuators, timing control, and a conductor program that turns a score into motion.",
-    tech: ["Arduino", "Raspberry Pi", "SolidWorks"],
+      "A Wi-Fi-synchronized orchestra of robotic instruments built from scratch at Penn's Engineering Summer Academy — microcontrollers driving solenoids and servos on laser-cut and 3D-printed mechanisms, performing full songs live for a public showcase.",
+    year: "2023",
+    tech: ["Microcontrollers", "Solenoids & Servos", "Wi-Fi Sync", "Laser Cutting", "3D Printing"],
+    links: [
+      { label: "Watch: Demons", href: "https://youtu.be/WiZxVXIdiMw" },
+      { label: "Watch: We Care a Lot", href: "https://youtu.be/NbZ0bh51bEo" },
+    ],
     gradient: ["#f06bb3", "#2b0a1d"],
   },
   {

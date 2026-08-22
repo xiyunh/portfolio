@@ -5,8 +5,9 @@ import SectionHeading from "./SectionHeading";
 
 function MarqueeCard({ project, index }: { project: Project; index: number }) {
   const [from, to] = project.gradient;
-  const href = project.live ?? project.source ?? "/projects";
-  const external = Boolean(project.live ?? project.source);
+  const primary = project.live ?? project.source ?? project.links?.[0]?.href;
+  const href = primary ?? "/projects";
+  const external = Boolean(primary);
 
   return (
     <a
