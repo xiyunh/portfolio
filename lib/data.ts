@@ -98,7 +98,6 @@ export type Project = {
   image?: string;
   // two hex colors used by the generated preview panel
   gradient: [string, string];
-  featured?: boolean;
 };
 
 export const projects: Project[] = [
@@ -111,7 +110,6 @@ export const projects: Project[] = [
     tech: ["Arduino", "C/C++", "Fusion 360"],
     source: "https://github.com/xiyunh/starcompass",
     gradient: ["#6b9fff", "#0a1233"],
-    featured: true,
   },
   {
     slug: "orchestra",
@@ -121,7 +119,6 @@ export const projects: Project[] = [
       "A set of robotic instruments that perform together in sync — actuators, timing control, and a conductor program that turns a score into motion.",
     tech: ["Arduino", "Raspberry Pi", "SolidWorks"],
     gradient: ["#f06bb3", "#2b0a1d"],
-    featured: true,
   },
   {
     slug: "drone",
@@ -131,17 +128,6 @@ export const projects: Project[] = [
       "A drone that flies itself — flight-controller integration, onboard sensing, and autonomous navigation routines.",
     tech: ["Raspberry Pi", "Python", "KiCad"],
     gradient: ["#c084fc", "#22093a"],
-    featured: true,
-  },
-  {
-    slug: "recognition",
-    title: "ML Song & Writing Recognition",
-    tags: ["Machine Learning", "Python"],
-    description:
-      "Machine-learning models that identify songs from audio clips and recognize handwriting from images.",
-    tech: ["Python", "Machine Learning"],
-    gradient: ["#8fc0ff", "#0a1a2e"],
-    featured: true,
   },
   {
     slug: "rocket-engine",
@@ -151,7 +137,15 @@ export const projects: Project[] = [
       "A rocket engine designed and built as part of a student rocket project — CAD modelling, analysis, and manufacturing.",
     tech: ["SolidWorks", "MATLAB"],
     gradient: ["#fb7185", "#2e0a14"],
-    featured: true,
+  },
+  {
+    slug: "recognition",
+    title: "ML Song & Writing Recognition",
+    tags: ["Machine Learning", "Python"],
+    description:
+      "Machine-learning models that identify songs from audio clips and recognize handwriting from images.",
+    tech: ["Python", "Machine Learning"],
+    gradient: ["#8fc0ff", "#0a1a2e"],
   },
   {
     slug: "roblox",
@@ -161,25 +155,6 @@ export const projects: Project[] = [
       "A Roblox game with every asset — environment, props, characters — modelled in Blender, plus scripted gameplay.",
     tech: ["Blender", "Roblox Studio", "Lua"],
     gradient: ["#f9a8d4", "#320f22"],
-    featured: true,
-  },
-  {
-    slug: "trading-bot",
-    title: "Trading Bot",
-    tags: ["Python", "Finance"],
-    description:
-      "An automated trading bot that pulls market data, evaluates a strategy, and places orders without human input.",
-    tech: ["Python"],
-    gradient: ["#6b9fff", "#0a1233"],
-  },
-  {
-    slug: "skincare",
-    title: "Skincare Store",
-    tags: ["Web", "E-commerce"],
-    description:
-      "A storefront for a skincare brand — product catalog, cart, and checkout with a clean, mobile-first design.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    gradient: ["#f06bb3", "#2b0a1d"],
   },
   {
     slug: "satellite",
@@ -189,23 +164,5 @@ export const projects: Project[] = [
       "A research paper on materials for satellite applications — testing, analysis, and findings written up for publication.",
     tech: ["MATLAB", "LaTeX"],
     gradient: ["#c084fc", "#22093a"],
-  },
-  {
-    slug: "light-shield",
-    title: "Light Shield",
-    tags: ["CAD", "Fabrication"],
-    description:
-      "A light shield taken from concept to fabricated part — designed in CAD, prototyped, and tested against stray light.",
-    tech: ["Fusion 360"],
-    gradient: ["#8fc0ff", "#0a1a2e"],
-  },
-  {
-    slug: "3d-portfolio",
-    title: "3D Art Portfolio",
-    tags: ["Web", "3D"],
-    description:
-      "A website showcasing 3D artwork rendered in Blender, presented in an interactive gallery.",
-    tech: ["Blender", "Three.js", "Next.js"],
-    gradient: ["#f9a8d4", "#320f22"],
   },
 ];

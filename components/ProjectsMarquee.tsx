@@ -61,9 +61,7 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
 
 export default function ProjectsMarquee() {
   // track is doubled for a seamless -50% loop
-  const featured = projects.filter((p) => p.featured);
-  const shown = featured.length ? featured : projects;
-  const loop = [...shown, ...shown];
+  const loop = [...projects, ...projects];
 
   return (
     <section id="projects" className="scroll-mt-24 py-24 md:py-32">
@@ -81,7 +79,7 @@ export default function ProjectsMarquee() {
               <MarqueeCard
                 key={`${p.slug}-${i}`}
                 project={p}
-                index={i % shown.length}
+                index={i % projects.length}
               />
             ))}
           </div>
