@@ -1,18 +1,7 @@
-import Image from "next/image";
 import type { Project } from "@/lib/data";
+import CoverImage from "./CoverImage";
 
 function Preview({ project }: { project: Project }) {
-  if (project.image) {
-    return (
-      <Image
-        src={project.image}
-        alt={`${project.title} preview`}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-        sizes="(min-width: 768px) 60vw, 100vw"
-      />
-    );
-  }
   const [from, to] = project.gradient;
   return (
     <div
@@ -37,6 +26,13 @@ function Preview({ project }: { project: Project }) {
       <span className="absolute right-4 bottom-4 font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
         [ preview_ready ]
       </span>
+      {project.image && (
+        <CoverImage
+          src={project.image}
+          alt={`${project.title} preview`}
+          sizes="(min-width: 768px) 60vw, 100vw"
+        />
+      )}
     </div>
   );
 }

@@ -120,6 +120,7 @@ export const projects: Project[] = [
     description:
       "A Wi-Fi-synchronized orchestra of robotic instruments built from scratch at Penn's Engineering Summer Academy — microcontrollers driving solenoids and servos on laser-cut and 3D-printed mechanisms, performing full songs live for a public showcase.",
     year: "2023",
+    image: "/projects/orchestra.jpg",
     tech: ["Microcontrollers", "Solenoids & Servos", "Wi-Fi Sync", "Laser Cutting", "3D Printing"],
     links: [
       { label: "Watch: Demons", href: "https://youtu.be/WiZxVXIdiMw" },

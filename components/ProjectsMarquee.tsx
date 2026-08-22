@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects, type Project } from "@/lib/data";
+import CoverImage from "./CoverImage";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -31,11 +32,18 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
         >
           {project.slug}
         </span>
-        <span className="absolute top-3 left-3 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
+        {project.image && (
+          <CoverImage
+            src={project.image}
+            alt={`${project.title} preview`}
+            sizes="(min-width: 768px) 400px, 300px"
+          />
+        )}
+        <span className="absolute top-3 left-3 font-mono text-[10px] tracking-[0.22em] text-white/70 uppercase drop-shadow">
           {String(index + 1).padStart(2, "0")}
         </span>
         {project.year && (
-          <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-[0.22em] text-white/40 uppercase">
+          <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-[0.22em] text-white/70 uppercase drop-shadow">
             {project.year}
           </span>
         )}
