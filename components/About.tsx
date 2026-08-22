@@ -1,38 +1,54 @@
-import { about, site } from "@/lib/data";
+import { about, site, skillGroups } from "@/lib/data";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import SkillIcon, { brandHex } from "./SkillIcon";
 
 export default function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 md:py-32">
       <SectionHeading index="01" label="About" title="Behind the keyboard" />
-      <div className="grid gap-12 md:grid-cols-[1.4fr_1fr]">
-        <Reveal>
-          <div className="space-y-6 text-lg leading-relaxed text-muted">
-            {about.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+
+      <Reveal>
+        <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-muted">
+          {about.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+          <p className="label pt-4">Based in {site.location}</p>
+        </div>
+      </Reveal>
+
+      {/* toolbox — four even columns */}
+      <Reveal delay={0.1}>
+        <div className="mt-20">
+          <p className="label mb-8">Toolbox</p>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            {skillGroups.map((group, gi) => (
+              <div key={group.label}>
+                <p className="mb-5 border-b border-line pb-3 font-mono text-[10px] tracking-[0.22em] text-muted uppercase">
+                  <span className="text-accent">
+                    {String(gi + 1).padStart(2, "0")}
+                  </span>{" "}
+                  / {group.label}
+                </p>
+                <ul className="space-y-3">
+                  {group.items.map((s) => (
+                    <li
+                      key={s.name}
+                      className="skill flex items-center gap-3 text-sm text-muted transition-colors hover:text-foreground"
+                      style={{ "--brand": s.hex ?? brandHex(s.icon) } as React.CSSProperties}
+                    >
+                      <span className="skill-icon shrink-0 text-muted/70 transition-colors duration-300">
+                        <SkillIcon icon={s.icon} className="h-[18px] w-[18px]" />
+                      </span>
+                      {s.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-            <p className="label pt-4">
-              Based in {site.location}
-            </p>
           </div>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <div>
-            <p className="label mb-6">Toolbox</p>
-            <ul className="flex flex-wrap gap-2">
-              {about.skills.map((s) => (
-                <li
-                  key={s}
-                  className="border border-line px-3 py-1.5 font-mono text-xs tracking-wider text-muted transition-colors hover:border-accent hover:text-accent"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

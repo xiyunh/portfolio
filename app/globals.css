@@ -179,3 +179,8 @@ body::after {
   color: transparent;
 }
 
+
+/* skill rows: logo lights up in its brand color on hover */
+.skill:hover .skill-icon {
+  color: var(--brand);
+}

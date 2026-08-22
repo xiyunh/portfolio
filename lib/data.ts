@@ -24,21 +24,72 @@ export const about = {
     "Over the past few years I've shipped products across the stack: real-time web apps, data-heavy dashboards, ML-powered tools, and the infrastructure that keeps them running. I like owning problems end-to-end, from a rough idea to something people rely on.",
     "When I'm not writing code, I'm usually reading about type systems, tinkering with generative art, or out looking for good coffee.",
   ],
-  skills: [
-    "TypeScript",
-    "React / Next.js",
-    "Node.js",
-    "Python",
-    "PostgreSQL",
-    "GraphQL",
-    "AWS",
-    "Docker",
-    "Redis",
-    "Tailwind CSS",
-    "CI/CD",
-    "Machine Learning",
-  ],
 };
+
+export type Skill = {
+  name: string;
+  /** simple-icons export name (e.g. "siPython"), "custom:<key>", or "mono:<letters>" */
+  icon: string;
+  /** override brand color (needed for black logos on a dark background) */
+  hex?: string;
+};
+
+export type SkillGroup = { label: string; items: Skill[] };
+
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Languages & Frameworks",
+    items: [
+      { name: "Python", icon: "siPython" },
+      { name: "JavaScript", icon: "siJavascript" },
+      { name: "TypeScript", icon: "siTypescript" },
+      { name: "React.js", icon: "siReact" },
+      { name: "Next.js", icon: "siNextdotjs", hex: "#ffffff" },
+      { name: "HTML / CSS", icon: "siHtml5" },
+      { name: "Tailwind CSS", icon: "siTailwindcss" },
+      { name: "Java", icon: "siOpenjdk", hex: "#f89820" },
+    ],
+  },
+  {
+    label: "Hardware & Engineering",
+    items: [
+      { name: "Fusion 360", icon: "siAutodesk", hex: "#ff6b00" },
+      { name: "SolidWorks", icon: "siDassaultsystemes", hex: "#da291c" },
+      { name: "KiCad", icon: "siKicad" },
+      { name: "Raspberry Pi", icon: "siRaspberrypi" },
+      { name: "Arduino", icon: "siArduino" },
+      { name: "MATLAB", icon: "mono:M", hex: "#e16737" },
+      { name: "C / C++", icon: "siCplusplus" },
+      { name: "Supabase", icon: "siSupabase" },
+    ],
+  },
+  {
+    label: "Design & Creative",
+    items: [
+      { name: "Figma", icon: "siFigma" },
+      { name: "Blender 3D", icon: "siBlender" },
+      { name: "Adobe Creative Suite", icon: "custom:adobe", hex: "#ff0000" },
+      { name: "Canva", icon: "mono:C", hex: "#00c4cc" },
+      { name: "Framer", icon: "siFramer" },
+      { name: "Three.js", icon: "siThreedotjs", hex: "#ffffff" },
+      { name: "DaVinci Resolve", icon: "siDavinciresolve", hex: "#6fa8dc" },
+      { name: "Unity", icon: "siUnity" },
+    ],
+  },
+  {
+    label: "Tools & Productivity",
+    items: [
+      { name: "Microsoft Office", icon: "custom:microsoft", hex: "#f25022" },
+      { name: "Excel", icon: "mono:X", hex: "#1d6f42" },
+      { name: "Notion", icon: "siNotion", hex: "#ffffff" },
+      { name: "Codex + Claude Code", icon: "siClaude" },
+      { name: "Git / GitHub", icon: "siGithub", hex: "#ffffff" },
+      { name: "Jira", icon: "siJira" },
+      { name: "Google Workspace", icon: "siGoogle" },
+      { name: "LaTeX", icon: "siLatex" },
+    ],
+  },
+];
 
 export type Project = {
   slug: string;
