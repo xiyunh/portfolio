@@ -137,7 +137,6 @@ export const projects: Project[] = [
     description:
       "A custom quadcopter built to find an object, fly to it, and pick it up on its own — a 3D-printed frame designed in Fusion 360 around a Pixhawk flight controller, with a camera and a servo-driven grabber positioned in its field of view.",
     image: "/projects/drone.jpg",
-    gallery: ["/projects/drone-cad.jpg"],
     tech: ["Pixhawk", "Fusion 360", "3D Printing", "FlySky RC", "Brushless Motors & ESCs"],
     gradient: ["#c084fc", "#22093a"],
   },
@@ -156,7 +155,7 @@ export const projects: Project[] = [
     tags: ["Machine Learning", "Python"],
     description:
       "Two classifiers built from the ground up. A CNN that reads mel-spectrograms of 3-second audio clips to name one of ten genres — ensembling three seeds lifted test accuracy from 80.5% to 86% per track. And a PyTorch digit recognizer trained on MNIST that reaches 96.89% test accuracy.",
-    gallery: ["/projects/mnist-confusion.jpg"],
+    image: "/projects/mnist-confusion.jpg",
     tech: ["Python", "PyTorch", "torchaudio", "Keras", "CNNs", "Google Colab"],
     links: [
       { label: "GTZAN report", href: "/projects/gtzan-report.pdf" },
