@@ -152,11 +152,16 @@ export const projects: Project[] = [
   },
   {
     slug: "recognition",
-    title: "ML Song & Writing Recognition",
+    title: "Music Genre & Handwriting Recognition",
     tags: ["Machine Learning", "Python"],
     description:
-      "Machine-learning models that identify songs from audio clips and recognize handwriting from images.",
-    tech: ["Python", "Machine Learning"],
+      "Two classifiers built from the ground up. A CNN that reads mel-spectrograms of 3-second audio clips to name one of ten genres — ensembling three seeds lifted test accuracy from 80.5% to 86% per track. And a PyTorch digit recognizer trained on MNIST that reaches 96.89% test accuracy.",
+    gallery: ["/projects/mnist-confusion.jpg"],
+    tech: ["Python", "PyTorch", "torchaudio", "Keras", "CNNs", "Google Colab"],
+    links: [
+      { label: "GTZAN report", href: "/projects/gtzan-report.pdf" },
+      { label: "MNIST slides", href: "/projects/mnist-slides.pdf" },
+    ],
     gradient: ["#8fc0ff", "#0a1a2e"],
   },
   {
