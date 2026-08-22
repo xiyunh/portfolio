@@ -1,5 +1,5 @@
 const phrases = [
-  "open to new opportunities",
+  "hardware to software",
   "design",
   "engineering",
   "typescript",

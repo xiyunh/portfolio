@@ -129,7 +129,7 @@ export default function ProjectCard({
           href={href}
           target={href ? "_blank" : undefined}
           rel="noreferrer"
-          className="card-glow relative block aspect-[16/10] overflow-hidden border border-line"
+          className="card-glow relative block aspect-[16/10] overflow-hidden"
           aria-label={`${project.title} preview`}
         >
           <Preview project={project} />

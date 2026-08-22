@@ -13,11 +13,11 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className="card-glow group mr-6 block w-[300px] shrink-0 border border-line bg-surface md:w-[400px]"
+      className="group mr-6 block w-[300px] shrink-0 md:w-[400px]"
     >
       {/* preview panel */}
       <div
-        className="relative aspect-video overflow-hidden border-b border-line"
+        className="card-glow relative aspect-video overflow-hidden"
         style={{
           backgroundColor: to,
           backgroundImage: `radial-gradient(ellipse at 30% 20%, ${from}33 0%, transparent 60%), linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px)`,
@@ -39,8 +39,8 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
       </div>
 
       {/* meta */}
-      <div className="p-5">
-        <h3 className="flex items-baseline justify-between text-lg font-semibold tracking-tight">
+      <div className="pt-5">
+        <h3 className="flex items-baseline justify-between text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
           {project.title}
           <span className="text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
             ↗

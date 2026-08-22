@@ -9,7 +9,6 @@ export default function Contact() {
       <Reveal>
         <div className="max-w-2xl">
           <p className="text-lg leading-relaxed text-muted">
-            I'm currently <span className="text-foreground">{site.availability.toLowerCase()}</span>.
             Whether you have a project in mind, a role to fill, or just want to
             talk shop — my inbox is open.
           </p>

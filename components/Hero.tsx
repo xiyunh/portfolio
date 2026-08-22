@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { site } from "@/lib/data";
 import LocalTime from "./LocalTime";
+import SocialIcon from "./SocialIcon";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -23,10 +24,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute bottom-[-15%] left-[-8%] h-[420px] w-[420px] rounded-full bg-accent-2 opacity-[0.08] blur-[140px]" />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-16">
-        <motion.p {...fade(0.05)} className="label mb-6">
-          {site.availability}
-        </motion.p>
-
         <motion.h1
           {...fade(0.15)}
           className="max-w-4xl text-6xl leading-[0.95] font-semibold tracking-tight md:text-[7.5rem]"
@@ -59,7 +56,7 @@ export default function Hero() {
 
         <motion.div
           {...fade(0.55)}
-          className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs tracking-widest text-muted"
+          className="mt-20 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs tracking-widest text-muted"
         >
           {site.socials.map((s) => (
             <a
@@ -67,9 +64,11 @@ export default function Hero() {
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="link-sweep uppercase transition-colors hover:text-foreground"
+              aria-label={s.label}
+              title={s.label}
+              className="transition-colors hover:text-accent"
             >
-              {s.label}
+              <SocialIcon name={s.icon} className="h-5 w-5" />
             </a>
           ))}
           <span className="ml-auto hidden uppercase md:inline">

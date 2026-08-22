@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/data";
 
 const links = [
-  { href: "/#about", label: "About" },
+  { href: "/#toolbox", label: "Toolbox" },
   { href: "/projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
 ];

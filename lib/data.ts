@@ -11,18 +11,9 @@ export const site = {
     "I design and build fast, reliable software — from polished interfaces to the systems behind them.",
   location: "Los Angeles, CA",
   email: "xiyunhu@ucla.edu",
-  availability: "Open to new opportunities",
   socials: [
-    { label: "GitHub", href: "https://github.com/yourhandle" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourhandle" },
-  ],
-};
-
-export const about = {
-  paragraphs: [
-    "I'm a software engineer who cares about the details — the way an interface feels, the way a system holds up under load, the way code reads six months later.",
-    "Over the past few years I've shipped products across the stack: real-time web apps, data-heavy dashboards, ML-powered tools, and the infrastructure that keeps them running. I like owning problems end-to-end, from a rough idea to something people rely on.",
-    "When I'm not writing code, I'm usually reading about type systems, tinkering with generative art, or out looking for good coffee.",
+    { label: "GitHub", icon: "github", href: "https://github.com/xiyunh" },
+    { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/xiyun-hu/" },
   ],
 };
 
