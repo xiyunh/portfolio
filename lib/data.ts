@@ -108,10 +108,11 @@ export const projects: Project[] = [
   {
     slug: "star-compass",
     title: "Star Compass",
-    tags: ["Embedded", "Hardware"],
+    tags: ["Embedded", "Astronomy"],
     description:
-      "A compass that orients itself by the stars rather than magnetic north — embedded sensing, a star-catalog lookup, and a custom-built housing.",
-    tech: ["Arduino", "C/C++", "Fusion 360"],
+      "A two-axis pointer that aims an arrow at a chosen star and keeps it there as the sky turns. An Arduino converts the star's RA/Dec to altitude and azimuth from local sidereal time — J2000 day count, GMST, and the alt-az transform written from scratch — and drives two stepper motors, re-aiming every second and unwrapping azimuth so it never spins the long way around north.",
+    image: "/projects/star-compass-code.png",
+    tech: ["Arduino", "C++", "AccelStepper", "28BYJ-48 Steppers", "Spherical Astronomy"],
     source: "https://github.com/xiyunh/starcompass",
     gradient: ["#6b9fff", "#0a1233"],
   },
