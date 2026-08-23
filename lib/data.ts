@@ -166,12 +166,13 @@ export const projects: Project[] = [
     gradient: ["#8fc0ff", "#0a1a2e"],
   },
   {
-    slug: "roblox",
-    title: "Roblox Game",
-    tags: ["Game Dev", "Blender"],
+    slug: "blender",
+    title: "Blender Creation",
+    tags: ["3D", "Blender"],
     description:
-      "A Roblox game with every asset — environment, props, characters — modelled in Blender, plus scripted gameplay.",
-    tech: ["Blender", "Roblox Studio", "Lua"],
+      "An ornate, lamp-lit European street built entirely in Blender — façades, stonework, ironwork, and climbing ivy — then brought into Roblox Studio to walk through in real time with emissive lighting and volumetric haze.",
+    image: "/projects/blender-street.png",
+    tech: ["Blender", "Roblox Studio", "PBR Materials"],
     gradient: ["#f9a8d4", "#320f22"],
   },
   {
