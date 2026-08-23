@@ -142,11 +142,13 @@ export const projects: Project[] = [
   },
   {
     slug: "rocket-engine",
-    title: "Rocket Engine",
-    tags: ["Aerospace", "CAD"],
+    title: "Rocket Engine Performance Analysis",
+    tags: ["Aerospace", "Propulsion"],
     description:
-      "A rocket engine designed and built as part of a student rocket project — CAD modelling, analysis, and manufacturing.",
-    tech: ["SolidWorks", "MATLAB"],
+      "Propulsion work for Rocket Project UCLA. I ran parametric analyses of engine performance with RocketCEA — sweeping chamber pressure, O/F ratio, and nozzle expansion ratio within the design constraints — and built the thrust models and trade-off plots in Python and MATLAB used to tighten constraints on nozzle geometry, injector flow rate, and materials.",
+    year: "2025 –",
+    image: "/projects/rocket-thrust-map.png",
+    tech: ["RocketCEA", "Python", "MATLAB", "NumPy / Matplotlib"],
     gradient: ["#fb7185", "#2e0a14"],
   },
   {
