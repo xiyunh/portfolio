@@ -181,7 +181,7 @@ export const projects: Project[] = [
     tags: ["Research", "Materials"],
     description:
       "A research paper on darkening low-Earth-orbit satellites with porous amorphous-carbon nanocoatings. I modelled the coating with a Bruggeman effective-medium approximation and the transfer-matrix method, swept porosity and thickness, and found an optimum (p ≈ 0.35, 625 nm) that cuts solar-weighted reflectance by 83% — a predicted ~2-magnitude dimming, more than double SpaceX's Darksat.",
-    image: "/projects/satellite-paper-page-2.png",
+    image: "/projects/satellite-paper-page-3.png",
     tech: ["Thin-Film Optics", "Transfer-Matrix Method", "Bruggeman EMA", "Solar-Weighted Reflectance"],
     links: [
       {
