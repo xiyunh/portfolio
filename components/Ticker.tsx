@@ -3,7 +3,7 @@ const phrases = [
   "engineering",
   "creativity",
   "leadership",
-  "detailed",
+  "detail-oriented",
   "hardware & software",
   "startups",
 ];
