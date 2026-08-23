@@ -175,3 +175,17 @@ body::after {
 .skill:hover .skill-icon {
   color: var(--brand);
 }
+
+/* heart cursor — pink by default, blue over anything clickable */
+@media (pointer: fine) {
+  body {
+    cursor: url("/cursor-heart.png") 3 3, auto;
+    cursor: -webkit-image-set(url("/cursor-heart.png") 1x, url("/cursor-heart@2x.png") 2x) 3 3, auto;
+    cursor: image-set(url("/cursor-heart.png") 1x, url("/cursor-heart@2x.png") 2x) 3 3, auto;
+  }
+  a, button, [role="button"], label, summary {
+    cursor: url("/cursor-heart-blue.png") 3 3, pointer;
+    cursor: -webkit-image-set(url("/cursor-heart-blue.png") 1x, url("/cursor-heart-blue@2x.png") 2x) 3 3, pointer;
+    cursor: image-set(url("/cursor-heart-blue.png") 1x, url("/cursor-heart-blue@2x.png") 2x) 3 3, pointer;
+  }
+}

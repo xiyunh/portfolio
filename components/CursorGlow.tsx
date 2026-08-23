@@ -2,7 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-// soft accent spotlight that trails the cursor — desktop only
+// a soft heart-shaped glow that trails the cursor — desktop only
+const HEART =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29'%3E%3Cpath d='M16 29C16 29 0 19 0 9A8 8 0 0 1 16 6 8 8 0 0 1 32 9C32 19 16 29 16 29Z' fill='black'/%3E%3C/svg%3E\")";
+
 export default function CursorGlow() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -18,7 +21,7 @@ export default function CursorGlow() {
       y = e.clientY;
       if (!raf) {
         raf = requestAnimationFrame(() => {
-          el.style.transform = `translate(${x - 300}px, ${y - 300}px)`;
+          el.style.transform = `translate(${x - 220}px, ${y - 200}px)`;
           raf = 0;
         });
       }
@@ -31,15 +34,29 @@ export default function CursorGlow() {
   }, []);
 
   return (
+    // outer: blur softens the masked heart into a glow
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed top-0 left-0 z-0 h-[600px] w-[600px] rounded-full opacity-[0.055]"
-      style={{
-        background:
-          "radial-gradient(circle, var(--accent) 0%, var(--accent-2) 35%, transparent 65%)",
-        transform: "translate(-600px, -600px)",
-      }}
-    />
+      className="pointer-events-none fixed top-0 left-0 z-0 h-[400px] w-[440px] opacity-[0.16]"
+      style={{ transform: "translate(-600px, -600px)", filter: "blur(36px)" }}
+    >
+      {/* inner: gradient clipped to a heart */}
+      <div
+        className="h-full w-full"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 40%, var(--accent) 0%, var(--accent-2) 55%, transparent 80%)",
+          WebkitMaskImage: HEART,
+          maskImage: HEART,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+          WebkitMaskPosition: "center",
+          maskPosition: "center",
+        }}
+      />
+    </div>
   );
 }
