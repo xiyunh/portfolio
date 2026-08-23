@@ -114,6 +114,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/pixi-code.png",
     tech: ["Python", "OpenCV", "ONNX Runtime", "MoveNet", "PnP Pose Estimation", "MAVSDK-ready"],
+    source: "https://github.com/xiyunh/pixi",
     gradient: ["#cdb7f3", "#1f1a2e"],
   },
   {
