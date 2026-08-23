@@ -22,7 +22,6 @@ export default function ProjectsPage() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
             The full archive — hardware, software, research, and 3D work.
-            Keep scrolling; it never ends.
           </p>
           <div className="mt-10 h-px w-full bg-line" />
         </div>
