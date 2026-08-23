@@ -41,7 +41,7 @@ export default function Hero() {
         <motion.div {...fade(0.4)} className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/projects"
-            className="btn-pop group inline-flex items-center gap-3 bg-accent px-6 py-3 font-mono text-xs tracking-[0.18em] text-background uppercase"
+            className="group inline-flex items-center gap-3 border border-line px-6 py-3 font-mono text-xs tracking-[0.18em] text-foreground uppercase transition-colors hover:border-accent hover:text-accent"
           >
             View projects
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -71,6 +71,14 @@ export default function Hero() {
               <SocialIcon name={s.icon} className="h-5 w-5" />
             </a>
           ))}
+          <a
+            href={`mailto:${site.email}`}
+            aria-label="Email"
+            title={site.email}
+            className="transition-colors hover:text-accent"
+          >
+            <SocialIcon name="mail" className="h-5 w-5" />
+          </a>
           <span className="ml-auto hidden uppercase md:inline">
             {site.location} / <LocalTime />
           </span>

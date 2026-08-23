@@ -150,15 +150,6 @@ body::after {
 
 /* ── charm pass ─────────────────────────────────── */
 
-/* offset "pop" shadow — buttons */
-.btn-pop {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.btn-pop:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 var(--accent-2);
-}
-
 /* glowing outline — project cards */
 .card-glow {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;

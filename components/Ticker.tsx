@@ -1,10 +1,11 @@
 const phrases = [
-  "hardware to software",
   "design",
   "engineering",
-  "typescript",
-  "systems that hold up",
-  "details matter",
+  "creativity",
+  "leadership",
+  "detailed",
+  "hardware & software",
+  "startups",
 ];
 
 // endless scrolling text strip between sections

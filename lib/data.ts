@@ -8,7 +8,7 @@ export const site = {
   name: "Xiyun Hu",
   firstName: "Xiyun",
   tagline:
-    "I design and build fast, reliable software — from polished interfaces to the systems behind them.",
+    "I build with hardware, design with software, and add a touch of artistry to everything.",
   location: "Los Angeles, CA",
   email: "xiyunhu@ucla.edu",
   socials: [

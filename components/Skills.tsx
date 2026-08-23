@@ -3,10 +3,10 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import SkillIcon, { brandHex } from "./SkillIcon";
 
-export default function Toolbox() {
+export default function Skills() {
   return (
-    <section id="toolbox" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 md:py-32">
-      <SectionHeading index="01" label="Toolbox" title="What I work with" />
+    <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 md:py-32">
+      <SectionHeading index="01" label="Skills" title="What I work with" />
       <Reveal>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {skillGroups.map((group, gi) => (

@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
-import Toolbox from "@/components/Toolbox";
+import Skills from "@/components/Skills";
 import ProjectsMarquee from "@/components/ProjectsMarquee";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hero />
       <Ticker />
-      <Toolbox />
+      <Skills />
       <ProjectsMarquee />
     </>
   );
