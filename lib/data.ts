@@ -106,6 +106,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "pixi",
+    title: "Pixi — Composition-Matching Drone",
+    tags: ["Computer Vision", "Drones"],
+    description:
+      "Hand it a reference photo — a Pinterest shot — and it works out where the camera stood. MoveNet pose estimation feeds a multi-hypothesis PnP solve against 3D body and head templates, recovering the camera's azimuth, elevation, distance, and framing. A live matcher then runs the same pipeline on the camera feed and issues drone directives — orbit, ascend, move closer — plus coaching for the subject, auto-capturing the moment the composition locks.",
+    year: "2026",
+    image: "/projects/pixi-code.png",
+    tech: ["Python", "OpenCV", "ONNX Runtime", "MoveNet", "PnP Pose Estimation", "MAVSDK-ready"],
+    gradient: ["#cdb7f3", "#1f1a2e"],
+  },
+  {
     slug: "rocket-engine",
     title: "Rocket Engine Performance Analysis",
     tags: ["Aerospace", "Propulsion"],
