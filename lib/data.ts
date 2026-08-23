@@ -106,15 +106,70 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "rocket-engine",
+    title: "Rocket Engine Performance Analysis",
+    tags: ["Aerospace", "Propulsion"],
+    description:
+      "Propulsion work for Rocket Project UCLA. I ran parametric analyses of engine performance with RocketCEA — sweeping chamber pressure, O/F ratio, and nozzle expansion ratio within the design constraints — and built the thrust models and trade-off plots in Python and MATLAB used to tighten constraints on nozzle geometry, injector flow rate, and materials.",
+    year: "2026",
+    image: "/projects/rocket-thrust-map.png",
+    tech: ["RocketCEA", "Python", "MATLAB", "NumPy / Matplotlib"],
+    gradient: ["#fb7185", "#2e0a14"],
+  },
+  {
+    slug: "recognition",
+    title: "Music Genre & Handwriting Recognition",
+    tags: ["Machine Learning", "Python"],
+    year: "2026",
+    description:
+      "Two classifiers built from the ground up. A CNN that reads mel-spectrograms of 3-second audio clips to name one of ten genres — ensembling three seeds lifted test accuracy from 80.5% to 86% per track. And a PyTorch digit recognizer trained on MNIST that reaches 96.89% test accuracy.",
+    image: "/projects/mnist-confusion-matrix.jpg",
+    tech: ["Python", "PyTorch", "torchaudio", "Keras", "CNNs", "Google Colab"],
+    links: [
+      { label: "GTZAN report", href: "/projects/gtzan-report.pdf" },
+      { label: "MNIST slides", href: "/projects/mnist-slides.pdf" },
+    ],
+    gradient: ["#8fc0ff", "#0a1a2e"],
+  },
+  {
     slug: "star-compass",
     title: "Star Compass",
     tags: ["Embedded", "Astronomy"],
+    year: "2025",
     description:
       "A two-axis pointer that aims an arrow at a chosen star and keeps it there as the sky turns. An Arduino converts the star's RA/Dec to altitude and azimuth from local sidereal time — J2000 day count, GMST, and the alt-az transform written from scratch — and drives two stepper motors, re-aiming every second and unwrapping azimuth so it never spins the long way around north.",
     image: "/projects/star-compass-code.png",
     tech: ["Arduino", "C++", "AccelStepper", "28BYJ-48 Steppers", "Spherical Astronomy"],
     source: "https://github.com/xiyunh/starcompass",
     gradient: ["#6b9fff", "#0a1233"],
+  },
+  {
+    slug: "drone",
+    title: "Autonomous Drone",
+    tags: ["Robotics", "Autonomy"],
+    year: "2025",
+    description:
+      "A custom quadcopter built to find an object, fly to it, and pick it up on its own — a 3D-printed frame designed in Fusion 360 around a Pixhawk flight controller, with a camera and a servo-driven grabber positioned in its field of view.",
+    image: "/projects/drone-flight.jpg",
+    tech: ["Pixhawk", "Fusion 360", "3D Printing", "FlySky RC", "Brushless Motors & ESCs"],
+    gradient: ["#c084fc", "#22093a"],
+  },
+  {
+    slug: "satellite",
+    title: "Reducing Satellite Light Pollution",
+    tags: ["Research", "Materials"],
+    year: "2024 – 2025",
+    description:
+      "A research paper on darkening low-Earth-orbit satellites with porous amorphous-carbon nanocoatings. I modelled the coating with a Bruggeman effective-medium approximation and the transfer-matrix method, swept porosity and thickness, and found an optimum (p ≈ 0.35, 625 nm) that cuts solar-weighted reflectance by 83% — a predicted ~2-magnitude dimming, more than double SpaceX's Darksat.",
+    image: "/projects/satellite-paper-page-4.png",
+    tech: ["Thin-Film Optics", "Transfer-Matrix Method", "Bruggeman EMA", "Solar-Weighted Reflectance"],
+    links: [
+      {
+        label: "Slides",
+        href: "https://docs.google.com/presentation/d/1wdtJhj9f6tqPt9pBmmJJHCmm7EFUkKe78fcJglLYtNc/edit?usp=sharing",
+      },
+    ],
+    gradient: ["#c084fc", "#22093a"],
   },
   {
     slug: "orchestra",
@@ -132,64 +187,14 @@ export const projects: Project[] = [
     gradient: ["#f06bb3", "#2b0a1d"],
   },
   {
-    slug: "drone",
-    title: "Autonomous Drone",
-    tags: ["Robotics", "Autonomy"],
-    description:
-      "A custom quadcopter built to find an object, fly to it, and pick it up on its own — a 3D-printed frame designed in Fusion 360 around a Pixhawk flight controller, with a camera and a servo-driven grabber positioned in its field of view.",
-    image: "/projects/drone-flight.jpg",
-    tech: ["Pixhawk", "Fusion 360", "3D Printing", "FlySky RC", "Brushless Motors & ESCs"],
-    gradient: ["#c084fc", "#22093a"],
-  },
-  {
-    slug: "rocket-engine",
-    title: "Rocket Engine Performance Analysis",
-    tags: ["Aerospace", "Propulsion"],
-    description:
-      "Propulsion work for Rocket Project UCLA. I ran parametric analyses of engine performance with RocketCEA — sweeping chamber pressure, O/F ratio, and nozzle expansion ratio within the design constraints — and built the thrust models and trade-off plots in Python and MATLAB used to tighten constraints on nozzle geometry, injector flow rate, and materials.",
-    year: "2025 –",
-    image: "/projects/rocket-thrust-map.png",
-    tech: ["RocketCEA", "Python", "MATLAB", "NumPy / Matplotlib"],
-    gradient: ["#fb7185", "#2e0a14"],
-  },
-  {
-    slug: "recognition",
-    title: "Music Genre & Handwriting Recognition",
-    tags: ["Machine Learning", "Python"],
-    description:
-      "Two classifiers built from the ground up. A CNN that reads mel-spectrograms of 3-second audio clips to name one of ten genres — ensembling three seeds lifted test accuracy from 80.5% to 86% per track. And a PyTorch digit recognizer trained on MNIST that reaches 96.89% test accuracy.",
-    image: "/projects/mnist-confusion-matrix.jpg",
-    tech: ["Python", "PyTorch", "torchaudio", "Keras", "CNNs", "Google Colab"],
-    links: [
-      { label: "GTZAN report", href: "/projects/gtzan-report.pdf" },
-      { label: "MNIST slides", href: "/projects/mnist-slides.pdf" },
-    ],
-    gradient: ["#8fc0ff", "#0a1a2e"],
-  },
-  {
     slug: "blender",
     title: "Blender Creation",
     tags: ["3D", "Blender"],
+    year: "2022",
     description:
       "An ornate, lamp-lit European street built entirely in Blender — façades, stonework, ironwork, and climbing ivy — then brought into Roblox Studio to walk through in real time with emissive lighting and volumetric haze.",
     image: "/projects/blender-street-3.png",
     tech: ["Blender", "Roblox Studio", "PBR Materials"],
     gradient: ["#f9a8d4", "#320f22"],
-  },
-  {
-    slug: "satellite",
-    title: "Reducing Satellite Light Pollution",
-    tags: ["Research", "Materials"],
-    description:
-      "A research paper on darkening low-Earth-orbit satellites with porous amorphous-carbon nanocoatings. I modelled the coating with a Bruggeman effective-medium approximation and the transfer-matrix method, swept porosity and thickness, and found an optimum (p ≈ 0.35, 625 nm) that cuts solar-weighted reflectance by 83% — a predicted ~2-magnitude dimming, more than double SpaceX's Darksat.",
-    image: "/projects/satellite-paper-page-4.png",
-    tech: ["Thin-Film Optics", "Transfer-Matrix Method", "Bruggeman EMA", "Solar-Weighted Reflectance"],
-    links: [
-      {
-        label: "Slides",
-        href: "https://docs.google.com/presentation/d/1wdtJhj9f6tqPt9pBmmJJHCmm7EFUkKe78fcJglLYtNc/edit?usp=sharing",
-      },
-    ],
-    gradient: ["#c084fc", "#22093a"],
   },
 ];
