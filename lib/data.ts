@@ -171,7 +171,7 @@ export const projects: Project[] = [
     tags: ["3D", "Blender"],
     description:
       "An ornate, lamp-lit European street built entirely in Blender — façades, stonework, ironwork, and climbing ivy — then brought into Roblox Studio to walk through in real time with emissive lighting and volumetric haze.",
-    image: "/projects/blender-street.png",
+    image: "/projects/blender-street-2.png",
     tech: ["Blender", "Roblox Studio", "PBR Materials"],
     gradient: ["#f9a8d4", "#320f22"],
   },
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     tags: ["Research", "Materials"],
     description:
       "A research paper on darkening low-Earth-orbit satellites with porous amorphous-carbon nanocoatings. I modelled the coating with a Bruggeman effective-medium approximation and the transfer-matrix method, swept porosity and thickness, and found an optimum (p ≈ 0.35, 625 nm) that cuts solar-weighted reflectance by 83% — a predicted ~2-magnitude dimming, more than double SpaceX's Darksat.",
-    image: "/projects/satellite-paper-page-3.png",
+    image: "/projects/satellite-paper-page-4.png",
     tech: ["Thin-Film Optics", "Transfer-Matrix Method", "Bruggeman EMA", "Solar-Weighted Reflectance"],
     links: [
       {
