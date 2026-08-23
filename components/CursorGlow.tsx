@@ -38,15 +38,15 @@ export default function CursorGlow() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed top-0 left-0 z-0 h-[400px] w-[440px] opacity-[0.16]"
-      style={{ transform: "translate(-600px, -600px)", filter: "blur(36px)" }}
+      className="pointer-events-none fixed top-0 left-0 z-0 h-[400px] w-[440px] opacity-[0.13]"
+      style={{ transform: "translate(-600px, -600px)", filter: "blur(14px)" }}
     >
       {/* inner: gradient clipped to a heart */}
       <div
         className="h-full w-full"
         style={{
           background:
-            "radial-gradient(circle at 50% 40%, var(--accent) 0%, var(--accent-2) 55%, transparent 80%)",
+            "radial-gradient(circle at 50% 35%, var(--accent) 0%, var(--accent) 35%, var(--accent-2) 100%)",
           WebkitMaskImage: HEART,
           maskImage: HEART,
           WebkitMaskRepeat: "no-repeat",
