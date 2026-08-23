@@ -38,10 +38,10 @@ export default function CursorGlow() {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed top-0 left-0 z-40 h-[400px] w-[440px] opacity-[0.07] mix-blend-screen"
+      className="pointer-events-none fixed top-0 left-0 z-40 h-[400px] w-[440px] opacity-[0.045] mix-blend-screen"
       style={{
         transform: "translate(-600px, -600px)",
-        filter: "blur(22px)",
+        filter: "blur(34px)",
         transition: "transform 140ms ease-out",
       }}
     >
