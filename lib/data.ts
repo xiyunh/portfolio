@@ -114,7 +114,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/rocket-thrust-map.png",
     tech: ["RocketCEA", "Python", "MATLAB", "NumPy / Matplotlib"],
-    gradient: ["#fb7185", "#2e0a14"],
+    gradient: ["#f5b0bd", "#2a1a1e"],
   },
   {
     slug: "recognition",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
       { label: "GTZAN report", href: "/projects/gtzan-report.pdf" },
       { label: "MNIST slides", href: "/projects/mnist-slides.pdf" },
     ],
-    gradient: ["#8fc0ff", "#0a1a2e"],
+    gradient: ["#b9d2f2", "#141c2a"],
   },
   {
     slug: "star-compass",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     image: "/projects/star-compass-code.png",
     tech: ["Arduino", "C++", "AccelStepper", "28BYJ-48 Steppers", "Spherical Astronomy"],
     source: "https://github.com/xiyunh/starcompass",
-    gradient: ["#6b9fff", "#0a1233"],
+    gradient: ["#a9c3f0", "#151b2b"],
   },
   {
     slug: "drone",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
       "A custom quadcopter built to find an object, fly to it, and pick it up on its own — a 3D-printed frame designed in Fusion 360 around a Pixhawk flight controller, with a camera and a servo-driven grabber positioned in its field of view.",
     image: "/projects/drone-flight.jpg",
     tech: ["Pixhawk", "Fusion 360", "3D Printing", "FlySky RC", "Brushless Motors & ESCs"],
-    gradient: ["#c084fc", "#22093a"],
+    gradient: ["#cdb7f3", "#1f1a2e"],
   },
   {
     slug: "satellite",
@@ -169,7 +169,7 @@ export const projects: Project[] = [
         href: "https://docs.google.com/presentation/d/1wdtJhj9f6tqPt9pBmmJJHCmm7EFUkKe78fcJglLYtNc/edit?usp=sharing",
       },
     ],
-    gradient: ["#c084fc", "#22093a"],
+    gradient: ["#cdb7f3", "#1f1a2e"],
   },
   {
     slug: "orchestra",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
       { label: "Watch: Demons", href: "https://youtu.be/WiZxVXIdiMw" },
       { label: "Watch: We Care a Lot", href: "https://youtu.be/NbZ0bh51bEo" },
     ],
-    gradient: ["#f06bb3", "#2b0a1d"],
+    gradient: ["#f3a7c9", "#2a1a23"],
   },
   {
     slug: "blender",
@@ -195,6 +195,6 @@ export const projects: Project[] = [
       "An ornate, lamp-lit European street built entirely in Blender — façades, stonework, ironwork, and climbing ivy — then brought into Roblox Studio to walk through in real time with emissive lighting and volumetric haze.",
     image: "/projects/blender-street-3.png",
     tech: ["Blender", "Roblox Studio", "PBR Materials"],
-    gradient: ["#f9a8d4", "#320f22"],
+    gradient: ["#f6bcd6", "#2c1a24"],
   },
 ];
