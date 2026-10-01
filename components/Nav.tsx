@@ -8,6 +8,7 @@ import { site } from "@/lib/data";
 const links = [
   { href: "/#skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
+  { href: "/art", label: "Art" },
 ];
 
 export default function Nav() {
