@@ -1,41 +1,7 @@
+import Link from "next/link";
 import type { Project } from "@/lib/data";
 import CoverImage from "./CoverImage";
-
-function Preview({ project }: { project: Project }) {
-  const [from, to] = project.gradient;
-  return (
-    <div
-      className="bg-grid absolute inset-0 transition-transform duration-700 group-hover:scale-[1.03]"
-      style={{
-        backgroundColor: to,
-        backgroundImage: `radial-gradient(ellipse at 30% 20%, ${from}33 0%, transparent 60%), radial-gradient(ellipse at 80% 90%, ${from}22 0%, transparent 55%), linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px)`,
-        backgroundSize: "auto, auto, 44px 44px, 44px 44px",
-      }}
-    >
-      {/* oversized slug watermark */}
-      <span
-        className="absolute inset-0 flex items-center justify-center font-mono text-4xl font-bold tracking-[0.3em] uppercase opacity-20 select-none md:text-6xl"
-        style={{ color: from }}
-      >
-        {project.slug}
-      </span>
-      {/* mono corner metadata, saifullah-style */}
-      <span className="absolute top-4 left-4 font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
-        {project.slug.replace(/-/g, "_")}.sys
-      </span>
-      <span className="absolute right-4 bottom-4 font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
-        [ preview_ready ]
-      </span>
-      {project.image && (
-        <CoverImage
-          src={project.image}
-          alt={`${project.title} preview`}
-          sizes="(min-width: 768px) 60vw, 100vw"
-        />
-      )}
-    </div>
-  );
-}
+import ProjectPreview from "./ProjectPreview";
 
 export default function ProjectCard({
   project,
@@ -45,7 +11,7 @@ export default function ProjectCard({
   index: number;
 }) {
   const number = String(index + 1).padStart(2, "0");
-  const href = project.live ?? project.source ?? project.links?.[0]?.href;
+  const href = `/projects/${project.slug}`;
 
   return (
     <article className="group border-b border-line py-14 first:pt-0 md:py-20">
@@ -60,21 +26,12 @@ export default function ProjectCard({
           </div>
 
           <h3 className="mt-6 text-2xl font-semibold tracking-tight md:text-4xl">
-            {href ? (
-              <a
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors group-hover:text-accent"
-              >
-                {project.title}
-                <span className="ml-3 inline-block text-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
-                  ↗
-                </span>
-              </a>
-            ) : (
-              project.title
-            )}
+            <Link href={href} className="transition-colors group-hover:text-accent">
+              {project.title}
+              <span className="ml-3 inline-block text-accent opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                →
+              </span>
+            </Link>
           </h3>
 
           <div className="mt-4 flex flex-wrap gap-2">
@@ -96,52 +53,22 @@ export default function ProjectCard({
             {project.tech.join(" · ")}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs tracking-[0.18em] uppercase">
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="link-sweep text-accent"
-              >
-                Live site ↗
-              </a>
-            )}
-            {project.source && (
-              <a
-                href={project.source}
-                target="_blank"
-                rel="noreferrer"
-                className="link-sweep text-muted transition-colors hover:text-foreground"
-              >
-                Source ↗
-              </a>
-            )}
-            {project.links?.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                target="_blank"
-                rel="noreferrer"
-                className="link-sweep text-accent"
-              >
-                {l.label} ↗
-              </a>
-            ))}
+          <div className="mt-8 font-mono text-xs tracking-[0.18em] uppercase">
+            <Link href={href} className="link-sweep text-accent">
+              View project →
+            </Link>
           </div>
         </div>
 
         {/* right: preview + optional gallery */}
         <div>
-          <a
+          <Link
             href={href}
-            target={href ? "_blank" : undefined}
-            rel="noreferrer"
             className="card-glow relative block aspect-[16/10] overflow-hidden"
             aria-label={`${project.title} preview`}
           >
-            <Preview project={project} />
-          </a>
+            <ProjectPreview project={project} />
+          </Link>
           {project.gallery && project.gallery.length > 0 && (
             <div
               className={`mt-4 grid gap-4 ${project.gallery.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}

@@ -6,15 +6,10 @@ import SectionHeading from "./SectionHeading";
 
 function MarqueeCard({ project, index }: { project: Project; index: number }) {
   const [from, to] = project.gradient;
-  const primary = project.live ?? project.source ?? project.links?.[0]?.href;
-  const href = primary ?? "/projects";
-  const external = Boolean(primary);
 
   return (
-    <a
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
+    <Link
+      href={`/projects/${project.slug}`}
       className="group mr-6 block w-[300px] shrink-0 md:w-[400px]"
     >
       {/* preview panel */}
@@ -54,7 +49,7 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
         <h3 className="flex items-baseline justify-between text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
           {project.title}
           <span className="text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
-            ↗
+            →
           </span>
         </h3>
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
@@ -64,7 +59,7 @@ function MarqueeCard({ project, index }: { project: Project; index: number }) {
           {project.tags.join(" / ")}
         </p>
       </div>
-    </a>
+    </Link>
   );
 }
 

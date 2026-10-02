@@ -82,21 +82,6 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-export type Artwork = {
-  title: string;
-  image: string;
-  medium: string;
-};
-
-// pieces shown on /art — add an entry and drop the image in public/art/
-export const artworks: Artwork[] = [
-  {
-    title: "Lamp-lit Street",
-    image: "/projects/blender-street-3.png",
-    medium: "Blender",
-  },
-];
-
 export type Project = {
   slug: string;
   title: string;
